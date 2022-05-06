@@ -49,7 +49,7 @@ else {
   $error=TRUE;
   $user = 'u47534';
   $pass = '6518561';
-  $db1 = new PDO('mysql:host=localhost;dbname=u41028', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+  $db1 = new PDO('mysql:host=localhost;dbname=u47534', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
   if(!empty($login) and !empty($pswrd)){
     try{
       $chk=$db1->prepare("SELECT * FROM userinfo WHERE login=?");
@@ -67,7 +67,7 @@ else {
     }
   }
   if($error==TRUE){
-    print('Стоп стоп. Мне кажется, или у вас неправильные логин или пароль? <br> Создайте нового <a href="index.php">пользователя</a> или попытайтесь <a href="login.php">войти</a> снова');
+    print('Неверный логин или пароль! <br> Создайте нового <a href="index.php">пользователя</a> или попытайтесь <a href="login.php">войти</a> снова');
     session_destroy();
     exit();
   }
