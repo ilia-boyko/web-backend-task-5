@@ -147,7 +147,7 @@ if (!empty($messages)) {
        if(empty($_SESSION['login'])){
        print('
        <div  '.$cl_e.' >
-       <input name="check" type="checkbox" '.$ch.'> Я болею за Red Bull Racing <br>
+       <input name="check" type="checkbox" '.$ch.'> С контрактом ознакомлен <br>
        </div>');}
        ?>
 
