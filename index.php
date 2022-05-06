@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   }
   if ($errors['checkbox']) {
     setcookie('check_error', '', 100000);
-    $messages[] = '<div class="error">Вы должны болеть за Red Bull Racing.</div>';
+    $messages[] = '<div class="error">Вы не приняли условия контракта.</div>';
     $error=TRUE;
   }
   $values = array();
@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   if (!$error && !empty($_COOKIE[session_name()]) && !empty($_SESSION['login'])) {
     $user = 'u47534';
     $pass = '6518561';
-    $db = new PDO('mysql:host=localhost;dbname=u41028', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+    $db = new PDO('mysql:host=localhost;dbname=u47534', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
     try{
       $get=$db->prepare("SELECT * FROM application WHERE id=?");
       $get->bindParam(1,$_SESSION['uid']);
@@ -279,7 +279,7 @@ else {
     
     $user = 'u47534';
     $pass = '6518561';
-    $db = new PDO('mysql:host=localhost;dbname=u41028', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+    $db = new PDO('mysql:host=localhost;dbname=u47534', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
     if (!empty($_COOKIE[session_name()]) && !empty($_SESSION['login']) and !$errors) {
       $id=$_SESSION['uid'];
       $upd=$db->prepare("UPDATE application SET name=:name, email=:email, year=:byear, pol=:pol, konech=:limbs, biogr=:bio WHERE id=:id");
